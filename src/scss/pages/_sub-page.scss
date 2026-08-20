@@ -1,0 +1,6 @@
+// src/scss/pages/_sub-page.scss
+// detail.html (sub_page) 전용 미세 조정 — hero 섹션이 없어 sticky header 바로 아래 breadcrumb이
+// 오므로 상단 여백을 확보한다.
+.breadcrumb {
+  padding-block-start: var(--spacing-lg);
+}

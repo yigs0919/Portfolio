@@ -1,0 +1,89 @@
+// src/scss/component/_card.scss
+@use '../abstract/mixins' as *;
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('desktop') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__empty {
+    padding: var(--spacing-3xl) 0;
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-md);
+    text-align: center;
+  }
+
+  &__item {
+    content-visibility: auto;
+    // contain-intrinsic-size: auto 400px auto 450px;
+  }
+}
+
+.card {
+  @include card-shell;
+  height: 100%;
+
+  &__media {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  &__logo {
+    border-radius: var(--radius-sm);
+  }
+
+  &__title {
+    font-size: var(--font-size-md);
+  }
+
+  &__title-link {
+    color: var(--color-text-primary);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-primary-base);
+    }
+  }
+
+  &__category-badge {
+    @include chip;
+  }
+
+  &__desc {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+  }
+
+  // 슬라이드 전체를 덮는 링크 — slider__btn/slider__dot이 위에 겹치도록 로컬 스태킹 컨텍스트 확보
+  &__slide-link {
+    position: relative;
+    z-index: var(--z-local-raised);
+    display: block;
+
+    // .card가 overflow: hidden(card-shell)이므로 outline이 잘리지 않도록 inset 처리
+    &:focus-visible {
+      outline-offset: calc(var(--focus-ring-offset) * -1);
+    }
+  }
+}

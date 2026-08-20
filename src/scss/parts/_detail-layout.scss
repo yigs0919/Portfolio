@@ -1,0 +1,20 @@
+// src/scss/parts/_detail-layout.scss
+@use '../abstract/mixins' as *;
+
+.detail-layout {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  padding-block-end: var(--spacing-3xl);
+
+  @include respond-to('tablet') {
+    grid-template-columns: minmax(260px, 320px) 1fr;
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+}

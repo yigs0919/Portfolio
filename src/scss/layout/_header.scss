@@ -1,0 +1,124 @@
+// src/scss/layout/_header.scss
+@use '../abstract/mixins' as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky-header);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+
+  &__inner {
+    @include flex-between;
+    @include container;
+    position: relative;
+    height: var(--header-h);
+    gap: var(--spacing-md);
+  }
+
+  &__logo {
+    @include flex-center;
+    gap: var(--spacing-xs);
+    flex-shrink: 0;
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  &__logo-text {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+  }
+
+  &__nav {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+
+    @include respond-to('tablet') {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__nav-item {
+    position: relative;
+  }
+
+  &__nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-text-primary);
+      background-color: var(--color-surface-hover);
+    }
+  }
+
+  &__actions {
+    @include flex-center;
+    flex-shrink: 0;
+    gap: var(--spacing-xs);
+  }
+
+  &__action-btn {
+    @include flex-center;
+    width: var(--control-size-md);
+    height: var(--control-size-md);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-text-primary);
+      background-color: var(--color-surface-hover);
+    }
+  }
+
+  &__search-popover {
+    position: fixed;
+    top: var(--header-h);
+    right: var(--spacing-lg);
+    margin-top: var(--spacing-xs);
+    padding: var(--spacing-md);
+    background-color: var(--color-surface);
+    border: {
+      width:  1px;
+      style:  solid;
+      color:  var(--color-border);
+      radius: var(--radius-md);
+    }
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: {
+      property:        opacity, transform, overlay, display;
+      duration:         var(--duration-base);
+      timing-function:  var(--easing-decelerate);
+      behavior:         allow-discrete;
+    }
+
+    &:popover-open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @starting-style {
+      &:popover-open {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+    }
+  }
+}

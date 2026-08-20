@@ -1,0 +1,44 @@
+// src/scss/component/_search-form.scss
+@use '../abstract/mixins' as *;
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+
+  &__label {
+    @include visually-hidden;
+  }
+
+  &__input {
+    flex: 1 1 auto;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    border: {
+      width:  1px;
+      style:  solid;
+      color:  var(--color-border);
+      radius: var(--radius-sm);
+    }
+  }
+
+  &__submit {
+    @include flex-center;
+    flex-shrink: 0;
+    width: var(--control-size-md);
+    height: var(--control-size-md);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-primary-base);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+  }
+}
+
+// 채워진 primary 배경 위 아이콘 대비 확보 — 다른 block(icon) 중첩을 피하기 위해 플랫 selector로 분리
+.search-form__submit .icon--search {
+  filter: brightness(0) invert(1);
+}

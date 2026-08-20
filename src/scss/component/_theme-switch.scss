@@ -1,0 +1,73 @@
+// src/scss/component/_theme-switch.scss
+// 해/달 아이콘 스와핑 방식 토글 — 네이티브 <button role="switch"> 기반.
+// 아이콘 2개(sun/moon)를 절대 배치로 겹쳐두고 aria-checked 상태에 따라 opacity로 크로스페이드.
+// 컴파일 출력 src/scss/main.css 기준 상대경로: ../assets/icons/*.svg (icon.scss의 ../assets/svg/와 실제 폴더가 다름)
+@use '../abstract/mixins' as *;
+
+.theme-switch {
+  @include flex-center;
+  position: relative;
+  width: var(--control-size-md);
+  height: var(--control-size-md);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  transition: {
+    property:       background-color, color;
+    duration:        var(--duration-fast);
+    timing-function: var(--easing-standard);
+  }
+
+  &:hover {
+    background-color: var(--color-surface-hover);
+  }
+
+  &:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus-ring);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  &:hover .theme-switch__icon {
+    background-color: var(--color-text-primary);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-text-tertiary);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    transition: {
+      property:       opacity, background-color;
+      duration:        var(--duration-fast);
+      timing-function: var(--easing-standard);
+    }
+
+    // 아이콘은 "현재 테마 상태"가 아니라 "클릭 시 전환될 테마"를 나타냄
+    // → 라이트 모드일 땐 달(다크로 전환 예고), 다크 모드일 땐 해(라이트로 전환 예고)
+    &--sun {
+      mask-image: url('../assets/icons/ico--theme-sun.svg');
+      opacity: 0;
+    }
+
+    &--moon {
+      mask-image: url('../assets/icons/ico--theme-moon.svg');
+    }
+  }
+}
+
+// [aria-checked="true"] 상태(다크 모드) — 자손 결합자 포함 시 3단계 초과라 flatten
+.theme-switch[aria-checked='true'] .theme-switch__icon--sun {
+  opacity: 1;
+}
+
+.theme-switch[aria-checked='true'] .theme-switch__icon--moon {
+  opacity: 0;
+}

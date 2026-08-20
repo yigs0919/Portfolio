@@ -1,0 +1,45 @@
+// src/scss/component/_icon.scss
+// SVG 분리 목록 (ui-architect Handoff 기준) — 7개 아이콘 전부 background 등록
+// 컴파일 출력 src/scss/main.css 기준 상대경로: ../assets/icons/*.svg
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+ /*  &--chevron-down {
+    width: 14px;
+    height: 14px;
+    background-image: url('../assets/icons/ico--chevron_down.svg');
+  }
+ */
+  &--search {
+    width: 18px;
+    height: 18px;
+    background-image: url('../assets/icons/ico--search.svg');
+  }
+
+  &--arrow-left {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/ico--arrow-left.svg');
+  }
+
+  &--arrow-right {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/ico--arrow-right.svg');
+  }
+
+  /* &--external-link {
+    width: 14px;
+    height: 14px;
+    background-image: url('../assets/svg/external-link.svg');
+  } */
+
+  &--close {
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/icons/ico--close.svg');
+  }
+}

@@ -1,0 +1,93 @@
+// src/scss/component/_lightbox.scss
+@use '../abstract/mixins' as *;
+
+// 네이티브 <dialog> — [open] 속성은 브라우저가 자동 관리하므로 표시/숨김 CSS 불필요
+.lightbox {
+  max-width: min(90vw, 1200px);
+  max-height: 90vh;
+  padding: 0;
+  background-color: var(--color-surface);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+
+  &::backdrop {
+    background-color: var(--color-overlay);
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-lg);
+  }
+
+  &__close {
+    @include flex-center;
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    z-index: var(--z-local-raised);
+    width: var(--control-size-md);
+    height: var(--control-size-md);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+
+    &:hover {
+      color: var(--color-text-primary);
+      background-color: var(--color-surface-hover);
+    }
+  }
+
+  &__nav {
+    @include flex-center;
+    position: absolute;
+    top: 50%;
+    z-index: var(--z-local-raised);
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    border-radius: var(--radius-full);
+    color: var(--color-text-secondary);
+
+    &--prev {
+      left: var(--spacing-sm);
+    }
+
+    &--next {
+      right: var(--spacing-sm);
+    }
+
+    &:hover {
+      color: var(--color-text-primary);
+      background-color: var(--color-surface-hover);
+    }
+  }
+
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    margin-inline: auto;
+    border-radius: var(--radius-sm);
+  }
+
+  &__caption {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+
+  &__counter {
+    margin-top: var(--spacing-xs);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-xs);
+    text-align: center;
+  }
+}

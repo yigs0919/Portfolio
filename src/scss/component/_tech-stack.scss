@@ -1,0 +1,28 @@
+// src/scss/component/_tech-stack.scss
+@use '../abstract/mixins' as *;
+
+.tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+
+  &__heading {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+
+  &__badge {
+    @include chip;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+  }
+}

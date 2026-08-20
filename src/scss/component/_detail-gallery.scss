@@ -1,0 +1,73 @@
+// src/scss/component/_detail-gallery.scss
+@use '../abstract/mixins' as *;
+
+.detail-gallery {
+  &__heading {
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+
+    @include respond-to('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // 뷰포트 밖 아이템 초기 렌더 비용 절감 (다수가 최초 뷰포트 밖에 위치)
+  // 아이템 너비가 breakpoint별로 유동(모바일 100% / 태블릿 이상 50%)이라
+  // auto 접두사로 최초 1회는 fallback 값을 쓰고 이후엔 실제 렌더 크기를 기억해 재사용 (폭 흔들림 방지)
+  &__item {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px auto 400px;
+  }
+
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  &__trigger {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    cursor: zoom-in;
+
+    // .detail-gallery__trigger가 overflow: hidden이므로 outline이 잘리지 않도록 inset 처리
+    &:focus-visible {
+      outline-offset: calc(var(--focus-ring-offset) * -1);
+    }
+
+    &:hover .detail-gallery__image,
+    &:focus-visible .detail-gallery__image {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform var(--duration-base) var(--easing-standard);
+  }
+
+  &__caption {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-relaxed);
+  }
+
+  &__empty {
+    padding: var(--spacing-3xl) 0;
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-md);
+    text-align: center;
+  }
+}

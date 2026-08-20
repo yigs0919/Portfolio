@@ -1,0 +1,23 @@
+// src/scss/component/_skip-link.scss
+@use '../abstract/mixins' as *;
+
+.skip-link {
+  @include visually-hidden;
+
+  &:focus {
+    position: fixed;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    z-index: var(--z-toast);
+    width: auto;
+    height: auto;
+    padding: var(--spacing-xs) var(--spacing-md);
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background-color: var(--color-primary-base);
+    color: var(--color-text-on-primary);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+}

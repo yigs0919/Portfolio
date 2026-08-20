@@ -1,0 +1,100 @@
+// src/scss/base/_reset.scss
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  // 기본 fallback — 실제 값은 theme/_light.scss, theme/_dark.scss에서 data-theme 속성 기준으로 확정
+  color-scheme: light dark;
+  scroll-padding-top: var(--header-h);
+  // 세로 스크롤바 유무에 따라 뷰포트 너비가 바뀌면서 새로고침/스크롤 시 콘텐츠 폭이 흔들리는 현상 방지 —
+  // 스크롤바 필요 여부와 무관하게 항상 스크롤바 자리를 고정 확보
+  scrollbar-gutter: stable;
+}
+
+// 앵커 이동(nav 링크 등) 시 부드러운 스크롤 — 모션 최소화를 선호하는 사용자는 즉시 이동
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+// 스크롤바 커스텀 — Firefox(scrollbar-width/-color)와 WebKit 계열(Chrome/Edge/Safari, ::-webkit-scrollbar)을 함께 지원
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-base) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: var(--radius-full);
+
+  &:hover {
+    background-color: var(--color-text-tertiary);
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+// 인터랙티브 요소 공통 focus 스타일 — 컴포넌트별 반복 선언 회피 (Critical CSS: 중복 제거)
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}

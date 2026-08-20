@@ -1,0 +1,5 @@
+// src/scss/layout/_container.scss
+// sticky site-header 대응 — 스킵링크(#js-main) 포커스 이동 시 헤더에 가리지 않도록 보정
+.main {
+  scroll-margin-top: var(--header-h);
+}

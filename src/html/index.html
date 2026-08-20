@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 퍼블리셔 이가슬 - 포트폴리오</title>
+  <meta name="description" content="웹 퍼블리셔 이가슬 포트폴리오입니다.">
+  <link rel="preload" href="../assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/images/yigs_profile.jpg" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="../scss/main.css">
+</head>
+<body>
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', storedTheme);
+    })();
+  </script>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html" aria-label="Yi Ga Seul Portfolio 홈으로 이동">
+        <span class="site-header__logo-text">Yi Ga Seul Portfolio</span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="주 메뉴">
+        <ul class="site-header__nav-list">
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="#about">소개</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button type="button" class="site-header__action-btn" popovertarget="js-search-popover" aria-expanded="false" aria-controls="js-search-popover" aria-label="검색 열기" data-action="search:toggle">
+          <span class="icon icon--search" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="theme-switch" id="js-theme-toggle" role="switch" aria-checked="false" aria-label="다크 모드 전환" data-action="theme:toggle">
+          <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true"></span>
+          <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="site-header__search-popover" id="js-search-popover" popover="auto" aria-label="프로젝트 검색">
+        <form class="search-form" role="search" action="#" method="get">
+          <label class="search-form__label" for="js-search-input">검색어 입력</label>
+          <input class="search-form__input" type="search" id="js-search-input" name="q" placeholder="프로젝트 검색..." autocomplete="off">
+          <button type="submit" class="search-form__submit" aria-label="검색 실행">
+            <span class="icon icon--search" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="js-main" tabindex="-1">
+    <section class="hero" id="about" aria-labelledby="hero-heading">
+      <h1 class="hero__name" id="hero-heading">이가슬 — 웹 퍼블리셔 포트폴리오</h1>
+      <div class="hero__inner">
+        <div class="hero__photo">
+          <img class="hero__photo-image" src="../assets/images/yigs_profile.jpg" alt="이가슬 증명사진" width="240" height="320" loading="eager">
+        </div>
+        <div class="hero__career">
+          <h2 class="hero__career-heading">경력</h2>
+          <p class="hero__education">한밭대학교 컴퓨터공학과 졸업</p>
+          <ul class="hero__career-list">
+            <li class="hero__career-item">
+              <span class="hero__career-period">2021.03 – 2021.12</span>
+              <span class="hero__career-role">(주)에어사운드 · 프론트엔드 웹 개발자</span>
+            </li>
+            <li class="hero__career-item">
+              <span class="hero__career-period">2022.07 – 현재</span>
+              <span class="hero__career-role">(주)스마트프로 · UI/UX 디자이너, 웹 퍼블리셔</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-grid-section" id="developer-tools" aria-labelledby="card-grid-heading">
+      <h2 class="card-grid-section__heading" id="card-grid-heading">프로젝트 구성</h2>
+
+      <ul class="card-grid" id="js-card-grid">
+        <!-- TikitaNote -->
+        <li class="card-grid__item">
+          <article class="card" data-component="tikitanote-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-tikitanote" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/tikitanote.html?id=tikitanote" aria-label="티키타노트 와이어프레임 - 티키타노트 와이어프레임 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/tikitanote/tikitanote-ui-wireframe.PNG" alt="티키타노트 와이어프레임 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/tikitanote.html?id=tikitanote" aria-label="티키타노트 중요 목록 - 티키타노트 중요 목록 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/tikitanote/tikitanote-important-list.png" alt="티키타노트 중요 목록 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/tikitanote.html?id=tikitanote" aria-label="티키타노트 중요 목록 저장 - 티키타노트 중요 목록 저장 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/tikitanote/tikitanote-important-list-save.png" alt="티키타노트 중요 목록 저장 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/tikitanote.html?id=tikitanote" aria-label="티키타노트 메인 검색 - 티키타노트 메인 검색 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/tikitanote/tikitanote-main-search.png" alt="티키타노트 메인 검색 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/tikitanote.html?id=tikitanote" aria-label="티키타노트 참여자 - 티키타노트 참여자 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/tikitanote/tikitanote-participant.png" alt="티키타노트 참여자 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-tikitanote" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-tikitanote" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="티키타노트 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/tikitanote.html?id=tikitanote">티키타노트</a></h3>
+              </div>
+              <p class="card__category">
+                <span class="card__category-badge card__category-badge--collaboration">(주) 에어사운드</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">AI 음성인식 기반 다자간 회의  자동 기록 및 관리 플랫폼</p>
+            </div>
+          </article>
+        </li>  
+
+        <!-- E-NPCR -->
+        <li class="card-grid__item">
+          <article class="card" data-component="e-npcr-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-e-npcr" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/e-npcr.html?id=e-npcr" aria-label="원전고도화 메인 - 원전고도화 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/e-npcr/enpcr-main.png" alt="원전고도화 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/e-npcr.html?id=e-npcr" aria-label="원전고도화 사이트맵 - 원전고도화 사이트맵 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/e-npcr/enpcr-sitemap.png" alt="원전고도화 사이트맵 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/e-npcr.html?id=e-npcr" aria-label="원전고도화 설비 - 원전고도화 설비 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/e-npcr/enpcr-equipment.png" alt="원전고도화 설비 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/e-npcr.html?id=e-npcr" aria-label="원전고도화 PZR - 원전고도화 PZR 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/e-npcr/enpcr-pzr.png" alt="원전고도화 PZR 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/e-npcr.html?id=e-npcr" aria-label="원전고도화 RX-CPC - 원전고도화 RX-CPC 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/e-npcr/enpcr-rx-table.png" alt="원전고도화 RX-CPC 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/e-npcr.html?id=e-npcr" aria-label="원전고도화 RX-Water Level - 원전고도화 RX-Water Level 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/e-npcr/enpcr-rx-water-level.png" alt="원전고도화 RX-Water Level 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="6" hidden>
+                    <a class="card__slide-link" href="sub/e-npcr.html?id=e-npcr" aria-label="원전고도화 SG - 원전고도화 SG 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/e-npcr/enpcr-sg.png" alt="원전고도화 SG 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-e-npcr" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-e-npcr" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="E-NPCR 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="6" aria-current="false" aria-label="7번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/e-npcr.html?id=e-npcr">E-NPCR</a></h3>
+              </div>
+              <p class="card__category">
+                <span class="card__category-badge card__category-badge--collaboration">한국수력원자력</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">원전 자원관리 시스템 고도화 단일 포털 프로그램</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- DT -->
+        <li class="card-grid__item">
+          <article class="card" data-component="dt-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-dt" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/dt.html?id=dt" aria-label="디지털트윈 디자인시스템 파운데이션 - 디지털트윈 디자인시스템 파운데이션 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/dt/dt-designsystem-foundation.PNG" alt="디지털트윈 디자인시스템 파운데이션 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/dt.html?id=dt" aria-label="디지털트윈 디자인시스템 컴포넌트 - 디지털트윈 디자인시스템 컴포넌트 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/dt/dt-designsystem-component.PNG" alt="디지털트윈 디자인시스템 컴포넌트 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/dt.html?id=dt" aria-label="디지털트윈 DICE - 디지털트윈 DICE 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/dt/dt-dice.PNG" alt="디지털트윈 DICE 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/dt.html?id=dt" aria-label="디지털트윈 DICE 다크 - 디지털트윈 DICE 다크 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/dt/dt-dice-dark.PNG" alt="디지털트윈 DICE 다크 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/dt.html?id=dt" aria-label="디지털트윈 메인 - 디지털트윈 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/dt/dt-main.png" alt="디지털트윈 메인 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/dt.html?id=dt" aria-label="디지털트윈 메인 정비통합솔루션 - 디지털트윈 메인 정비통합솔루션 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/dt/dt-main-mis.png" alt="디지털트윈 메인 정비통합솔루션 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-dt" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-dt" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="dt 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="6" aria-current="false" aria-label="7번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/dt.html?id=dt">디지털트윈</a></h3>
+              </div>
+              <p class="card__category">
+                <span class="card__category-badge card__category-badge--collaboration">한국수력원자력</span>
+                <span class="card__category-badge card__category-badge--collaboration">용역</span>
+              </p>
+              <p class="card__desc">APR1400 디지털트윈 구축을 위한 가시화 및 Metaverse 운영 플랫폼</p>
+            </div>
+          </article>
+        </li>      
+
+        <!-- MIS -->
+        <li class="card-grid__item">
+          <article class="card" data-component="mis-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-mis" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/mis.html?id=mis" aria-label="정비통합 상세화면 - 정비통합 상세화면 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/mis/mis-detail.png" alt="정비통합 상세화면 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/mis.html?id=mis" aria-label="정비통합 상세화면 다크모드 - 정비통합 상세화면 다크모드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/mis/mis-detail-dark.png" alt="정비통합 상세화면 다크모드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/mis.html?id=mis" aria-label="정비통합 상세화면 테이블 - 정비통합 상세화면 테이블 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/mis/mis-detail-table.png" alt="정비통합 상세화면 테이블 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/mis.html?id=mis" aria-label="정비통합 상세화면 테이블 다크모드 - 정비통합 상세화면 테이블 다크모드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/mis/mis-detail-table-dark.png" alt="정비통합 상세화면 테이블 다크모드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/mis.html?id=mis" aria-label="정비통합 마이페이지 - 정비통합 마이페이지 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/mis/mis-mypage.png" alt="정비통합 마이페이지 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/mis.html?id=mis" aria-label="정비통합 마이페이지 다크모드 - 정비통합 마이페이지 다크모드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/mis/mis-mypage-dark.png" alt="정비통합 마이페이지 다크모드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-mis" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-mis" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="정비통합 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/mis.html?id=mis">정비통합솔루션</a></h3>
+              </div>
+              <p class="card__category">
+                <span class="card__category-badge card__category-badge--collaboration">한국수력원자력</span>
+                <span class="card__category-badge card__category-badge--collaboration">용역</span>
+              </p>
+              <p class="card__desc">디지털트윈 기반 통합 정비 지원용 설비자산 웨어하우스</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- Pipe-Thinning -->
+        <li class="card-grid__item">
+          <article class="card" data-component="pipe-thinning-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-pipe-thinning" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/pipe-thinning.html?id=pipe-thinning" aria-label="배관 감육 배관관리 현황 - 배관 감육 배관관리 현황 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/pipe-thinning/pipe-thinning-status.png" alt="배관 감육 배관관리 현황 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/pipe-thinning.html?id=pipe-thinning" aria-label="배관 감육 데이터 관리 - 배관 감육 데이터 관리 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/pipe-thinning/pipe-thinning-data-management.png" alt="배관 감육 데이터 관리 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/pipe-thinning.html?id=pipe-thinning" aria-label="배관 감육 3D정보시각화 - 배관 감육 3D정보시각화 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/pipe-thinning/pipe-thinning-3d-visualization.png" alt="배관 감육 3D정보시각화 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/pipe-thinning.html?id=pipe-thinning" aria-label="배관 감육 컴포넌트 - 배관 감육 컴포넌트 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/pipe-thinning/pipe-thinning-component.png" alt="배관 감육 컴포넌트 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/pipe-thinning.html?id=pipe-thinning" aria-label="배관 감육 연결그룹 - 배관 감육 연결그룹 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/pipe-thinning/pipe-thinning-connection-group.png" alt="배관 감육 연결그룹 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/pipe-thinning.html?id=pipe-thinning" aria-label="배관 감육 라인그룹 - 배관 감육 라인그룹 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/pipe-thinning/pipe-thinning-line-group.png" alt="배관 감육 라인그룹 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="6" hidden>
+                    <a class="card__slide-link" href="sub/pipe-thinning.html?id=pipe-thinning" aria-label="배관 감육 배관 모니터링 및 분석 - 배관 감육 배관 모니터링 및 분석 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/pipe-thinning/pipe-thinning-monitoring-analysis.png" alt="배관 감육 배관 모니터링 및 분석 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-pipe-thinning" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-pipe-thinning" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="배관 감육 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="6" aria-current="false" aria-label="7번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/pipe-thinning.html?id=pipe-thinning">배관 감육</a></h3>
+              </div>
+              <p class="card__category">
+                <span class="card__category-badge card__category-badge--collaboration">한국수력원자력</span>
+                <span class="card__category-badge card__category-badge--collaboration">용역</span>
+              </p>
+              <p class="card__desc">원전 디지털트윈 통합용 표준형 배관 감시 및 분석 솔루션</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- SSNC -->
+        <li class="card-grid__item">
+          <article class="card" data-component="ssnc-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-ssnc" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/ssnc.html?id=ssnc" aria-label="SSNC 스마트 빌리지 타운 메인 - SSNC 스마트 빌리지 타운 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ssnc/ssnc-smart-village-town.png" alt="SSNC 스마트 빌리지 타운 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/ssnc.html?id=ssnc" aria-label="SSNC 스마트 빌리지 타운 그래프 - SSNC 스마트 빌리지 타운 그래프 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ssnc/ssnc-smart-village-town-graph.png" alt="SSNC 스마트 빌리지 타운 그래프 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/ssnc.html?id=ssnc" aria-label="SSNC 스마트 빌리지 타운 테이블 - SSNC 스마트 빌리지 타운 테이블 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ssnc/ssnc-smart-village-town-table.png" alt="SSNC 스마트 빌리지 타운 테이블 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/ssnc.html?id=ssnc" aria-label="SSNC 스마트 빌리지 타운 전체 - SSNC 스마트 빌리지 타운 전체 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ssnc/ssnc-smart-village-town-total.png" alt="SSNC 스마트 빌리지 타운 전체 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/ssnc.html?id=ssnc" aria-label="SSNC 스마트 AI 데이터센터 메인 - SSNC 스마트 AI 데이터센터 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ssnc/ssnc-smart-ai-data-center.png" alt="SSNC 스마트 AI 데이터센터 메인 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/ssnc.html?id=ssnc" aria-label="SSNC 스마트 AI 데이터센터 전체 - SSNC 스마트 AI 데이터센터 전체 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ssnc/ssnc-smart-ai-data-center-total.png" alt="SSNC 스마트 AI 데이터센터 전체 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-ssnc" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-ssnc" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="SSNC 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/ssnc.html?id=ssnc">스마트 넷제로 시티</a></h3>
+              </div>
+              <p class="card__category">
+                <span class="card__category-badge card__category-badge--collaboration">한국수력원자력</span>
+                <span class="card__category-badge card__category-badge--collaboration">용역</span>
+              </p>
+              <p class="card__desc">SMR기반 스마트 넷제로 시티 설계 및 가시화 플랫폼 SW 개발</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- TP -->
+        <li class="card-grid__item">
+          <article class="card" data-component="tp-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-tp" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/tp.html?id=tp" aria-label="TP 반응 시뮬레이터 메인 - TP 반응 시뮬레이터 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/tp/tp-reaction-simulator.png" alt="TP 반응 시뮬레이터 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/tp.html?id=tp" aria-label="TP 역설계 메인 - TP 역설계 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/tp/tp-reverse-engineering.png" alt="TP 역설계 메인 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-tp" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-tp" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="TP 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/tp.html?id=tp">나노 입자 합성 가상제조 시스템</a></h3>
+              </div>
+              <p class="card__category">                
+                <span class="card__category-badge card__category-badge--collaboration">대전 테크노파크, 한국화학연구원</span>
+                <span class="card__category-badge card__category-badge--collaboration">파일럿</span>
+              </p>
+              <p class="card__desc">Online-Lab + Self-driving Lab 연계 구조의 작동 가능성 최소 수준 실증 근거 및 자료 확보용 콘텐츠</p>
+            </div>
+          </article>
+        </li>        
+
+        <!-- AI Safeguard -->
+        <li class="card-grid__item">
+          <article class="card" data-component="ai-safeguard-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-ai-safeguard" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/ai-safeguard.html?id=ai-safeguard" aria-label="AI 안전관리 메인 - AI 안전관리 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ai-safeguard/ai-safeguard.png" alt="AI 안전관리 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/ai-safeguard.html?id=ai-safeguard" aria-label="AI 안전관리 토글 - AI 안전관리 토글 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ai-safeguard/ai-safeguard-toggle.png" alt="AI 안전관리 토글 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/ai-safeguard.html?id=ai-safeguard" aria-label="AI 안전관리 이벤트 로그 - AI 안전관리 이벤트 로그 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/ai-safeguard/ai-safeguard-event-log.png" alt="AI 안전관리 이벤트 로그 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-ai-safeguard" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-ai-safeguard" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="AI 안전관리 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/ai-safeguard.html?id=ai-safeguard">Ai 융합형 안전관리 플랫폼</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">중기청</span>
+                <span class="card__category-badge card__category-badge--collaboration">과제</span>
+              </p>
+              <p class="card__desc">디지털트윈 기반 AI 융합형 안전관리 플랫폼</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- S-Project -->
+        <li class="card-grid__item">
+          <article class="card" data-component="sproject-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-sproject" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/sproject.html?id=sproject" aria-label="소규모프로젝트 충남대학교 메인 - 소규모프로젝트 충남대학교 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/s-project/sp-nprogr-third-floor.png" alt="소규모프로젝트 충남대학교 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/sproject.html?id=sproject" aria-label="소규모프로젝트 충남대학교 4층 - 소규모프로젝트 충남대학교 4층 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/s-project/sp-nprogr-fourth-floor.png" alt="소규모프로젝트 충남대학교 4층 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/sproject.html?id=sproject" aria-label="소규모프로젝트 충남대학교 4층 인원표시 - 소규모프로젝트 충남대학교 4층 인원표시 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/s-project/sp-nprogr-fourth-floor-number-of-people.png" alt="소규모프로젝트 충남대학교 4층 인원표시 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/sproject.html?id=sproject" aria-label="소규모프로젝트 한국해양대학교 메인 - 소규모프로젝트 한국해양대학교 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/s-project/sp-kmou-main.PNG" alt="소규모프로젝트 한국해양대학교 메인 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/sproject.html?id=sproject" aria-label="소규모프로젝트 한국해양대학교 상면 - 소규모프로젝트 한국해양대학교 상면 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/s-project/sp-kmou-top.PNG" alt="소규모프로젝트 한국해양대학교 상면 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/sproject.html?id=sproject" aria-label="소규모프로젝트 한국해양대학교 측면 - 소규모프로젝트 한국해양대학교 측면 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/s-project/sp-kmou-side.PNG" alt="소규모프로젝트 한국해양대학교 측면 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-sproject" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-sproject" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="S-Project 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/sproject.html?id=sproject">소규모 프로젝트</a></h3>
+              </div>
+              <p class="card__category">
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">소규모 과제</span>
+              </p>
+              <p class="card__desc">스마트프로 및 일부 대학교 연계 과제 프로젝트</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- APM -->
+        <li class="card-grid__item">
+          <article class="card" data-component="apm-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-apm" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/apm.html?id=apm" aria-label="APM 메인 - APM 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/apm/apm-main.PNG" alt="APM 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/apm.html?id=apm" aria-label="APM 로딩 - APM 로딩 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/apm/apm-loading.PNG" alt="APM 로딩 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/apm.html?id=apm" aria-label="APM 모니터링-검색 - APM 모니터링-검색 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/apm/apm-monitoring-search.PNG" alt="APM 모니터링-검색 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/apm.html?id=apm" aria-label="APM 모니터링-대시보드 - APM 모니터링-대시보드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/apm/apm-monitoring-dashboard.PNG" alt="APM 모니터링-대시보드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/apm.html?id=apm" aria-label="APM 모니터링-대시보드-자세히 - APM 모니터링-대시보드-자세히 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/apm/apm-monitoring-dashboard-detail.PNG" alt="APM 모니터링-대시보드-자세히 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/apm.html?id=apm" aria-label="APM 모니터링-시각화 - APM 모니터링-시각화 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/apm/apm-monitoring-visualization.PNG" alt="APM 모니터링-시각화 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-apm" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-apm" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="APM 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/apm.html?id=apm">APM 모니터링</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">Kibana 기반 스마트프로 솔루션 연계 프로젝트</p>
+            </div>
+          </article>
+        </li>       
+
+        <!-- VTS Login -->
+        <li class="card-grid__item">
+          <article class="card" data-component="vts-login-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-vts-login" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/vts-login.html?id=vts-login" aria-label="VTS 로그인 메인 - VTS 로그인 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-login/vts-login.png" alt="VTS 로그인 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/vts-login.html?id=vts-login" aria-label="VTS 로그인 입력됨 - VTS 로그인 입력됨 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-login/vts-login-entered.png" alt="VTS 로그인 입력됨 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/vts-login.html?id=vts-login" aria-label="VTS 로그인 오류 - VTS 로그인 오류 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-login/vts-login-error.png" alt="VTS 로그인 오류 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/vts-login.html?id=vts-login" aria-label="VTS 로그인 회원가입 - VTS 로그인 회원가입 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-login/vts-login-signup.png" alt="VTS 로그인 회원가입 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/vts-login.html?id=vts-login" aria-label="VTS 로그인 회원가입 입력됨 - VTS 로그인 회원가입 입력됨 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-login/vts-login-signup-entered.png" alt="VTS 로그인 회원가입 입력됨 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/vts-login.html?id=vts-login" aria-label="VTS 로그인 회원가입 중복확인 - VTS 로그인 회원가입 중복확인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-login/vts-login-signup-duplicate-check.png" alt="VTS 로그인 회원가입 중복확인 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-vts-login" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-vts-login" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="VTS 로그인 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/vts-login.html?id=vts-login">VTS 솔루션 - 로그인</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">스마트프로 솔루션 프로그램 로그인 페이지</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- VTS Builder -->
+        <li class="card-grid__item">
+          <article class="card" data-component="vts-builder-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-vts-builder" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 메인 - VTS 빌더 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder.png" alt="VTS 빌더 메인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 메인 다크모드 - VTS 빌더 메인 다크모드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder-dark.png" alt="VTS 빌더 메인 다크모드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 코치마크 - VTS 빌더 코치마크 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder-coachmark.png" alt="VTS 빌더 코치마크 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 코치마크 다크모드 - VTS 빌더 코치마크 다크모드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder-coachmark-dark.png" alt="VTS 빌더 코치마크 다크모드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 즐겨찾기 - VTS 빌더 즐겨찾기 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder-favorite.png" alt="VTS 빌더 즐겨찾기 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 즐겨찾기 다크모드 - VTS 빌더 즐겨찾기 다크모드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder-favorite-dark.png" alt="VTS 빌더 즐겨찾기 다크모드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="6" hidden>
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 템플릿 - VTS 빌더 템플릿 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder-template.png" alt="VTS 빌더 템플릿 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="7" hidden>
+                    <a class="card__slide-link" href="sub/vts-builder.html?id=vts-builder" aria-label="VTS 빌더 템플릿 다크모드 - VTS 빌더 템플릿 다크모드 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts_builder/vts-builder-template-dark.png" alt="VTS 빌더 템플릿 다크모드 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-vts-builder" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-vts-builder" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="VTS 빌더 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="6" aria-current="false" aria-label="7번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="7" aria-current="false" aria-label="8번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/vts-builder.html?id=vts-builder">VTS 솔루션 - 빌더</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">스마트프로 솔루션 프로그램 빌더 페이지</p>
+            </div>
+          </article>
+        </li>     
+        
+        <!-- VTS Presenter -->
+        <li class="card-grid__item">
+          <article class="card" data-component="vts-presenter-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-vts-presenter" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/vts-presenter.html?id=vts-presenter" aria-label="VTS 프레젠터 화면정의서 - VTS 프레젠터 화면정의서 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-presenter/vts-presenter-ui-specification.PNG" alt="VTS 프레젠터 화면정의서 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/vts-presenter.html?id=vts-presenter" aria-label="VTS 프레젠터 메인 - VTS 프레젠터 메인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-presenter/vts-presenter.png" alt="VTS 프레젠터 메인 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/vts-presenter.html?id=vts-presenter" aria-label="VTS 프레젠터 신규생성 - VTS 프레젠터 신규생성 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-presenter/vts-presenter-new.png" alt="VTS 프레젠터 신규생성 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/vts-presenter.html?id=vts-presenter" aria-label="VTS 프레젠터 사이드바 - VTS 프레젠터 사이드바 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-presenter/vts-presenter-sidebar.png" alt="VTS 프레젠터 사이드바 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/vts-presenter.html?id=vts-presenter" aria-label="VTS 프레젠터 리사이저 - VTS 프레젠터 리사이저 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-presenter/vts-presenter-resizer.png" alt="VTS 프레젠터 리사이저 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/vts-presenter.html?id=vts-presenter" aria-label="VTS 프레젠터 미리보기 - VTS 프레젠터 미리보기 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-presenter/vts-presenter-preview.png" alt="VTS 프레젠터 미리보기 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-vts-presenter" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-vts-presenter" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="VTS 프레젠터 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>  
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/vts-presenter.html?id=vts-presenter">VTS 솔루션 - 프레젠터</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">스마트프로 솔루션 프로그램 템플릿 구성 페이지</p>
+            </div>
+          </article>
+        </li>  
+
+        <!-- VTS Portal Main -->
+        <li class="card-grid__item">
+          <article class="card" data-component="vts-portal-main-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-vts-portal-main" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/vts-portal-main.html?id=vts-portal-main" aria-label="VTS 포털 로그인 - VTS 포털 로그인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-main/vts-portal-login.png" alt="VTS 포털 로그인 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-main.html?id=vts-portal-main" aria-label="VTS 포털 로그인 비밀번호 변경 - VTS 포털 로그인 비밀번호 변경 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-main/vts-portal-login-pwchange.png" alt="VTS 포털 로그인 비밀번호 변경 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-main.html?id=vts-portal-main" aria-label="VTS 포털 메인 사용자 - VTS 포털 메인 사용자 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-main/vts-portal-user-main.png" alt="VTS 포털 메인 사용자 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-main.html?id=vts-portal-main" aria-label="VTS 포털 메인 관리자 - VTS 포털 메인 관리자 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-main/vts-portal-admin-main.png" alt="VTS 포털 메인 관리자 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-vts-portal-main" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-vts-portal-main" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="VTS 포털 메인 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/vts-portal-main.html?id=vts-portal-main">VTS 솔루션 - 포털 메인</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">스마트프로 솔루션 프로그램 포털 메인 페이지</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- VTS Portal User List -->
+        <li class="card-grid__item">
+          <article class="card" data-component="vts-portal-user-list-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-vts-portal-user-list" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/vts-portal-user-list.html?id=vts-portal-user-list" aria-label="VTS 상세페이지 사용자 공지사항 - VTS 상세페이지 사용자 공지사항 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-user-list/vts-portal-user-list-notice.png" alt="VTS 상세페이지 사용자 공지사항 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-user-list.html?id=vts-portal-user-list" aria-label="VTS 상세페이지 사용자 공지사항 상세보기 - VTS 상세페이지 사용자 공지사항 상세보기 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-user-list/vts-portal-user-list-notice-detail.png" alt="VTS 상세페이지 사용자 공지사항 상세보기 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-user-list.html?id=vts-portal-user-list" aria-label="VTS 상세페이지 사용자 FAQ - VTS 상세페이지 사용자 FAQ 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-user-list/vts-portal-user-list-faq.png" alt="VTS 상세페이지 사용자 FAQ 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-user-list.html?id=vts-portal-user-list" aria-label="VTS 상세페이지 사용자 FAQ 상세보기 - VTS 상세페이지 사용자 FAQ 상세보기 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-user-list/vts-portal-user-list-faq-detail.png" alt="VTS 상세페이지 사용자 FAQ 상세보기 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-user-list.html?id=vts-portal-user-list" aria-label="VTS 상세페이지 사용자 Q&A - VTS 상세페이지 사용자 Q&A 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-user-list/vts-portal-user-list-qna.png" alt="VTS 상세페이지 사용자 Q&A 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-user-list.html?id=vts-portal-user-list" aria-label="VTS 상세페이지 사용자 Q&A 질문 등록 - VTS 상세페이지 사용자 Q&A 질문 등록 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-user-list/vts-portal-user-list-qna-register.png" alt="VTS 상세페이지 사용자 Q&A 질문 등록 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-vts-portal-user-list" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-vts-portal-user-list" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="VTS 포털 사용자 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/vts-portal-user-list.html?id=vts-portal-user-list">VTS 솔루션 - 포털 사용자 상세페이지</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">스마트프로 솔루션 프로그램 포털 사용자 권한 상세 페이지</p>
+            </div>
+          </article>
+        </li>
+
+        <!-- VTS Portal Admin List -->
+        <li class="card-grid__item">
+          <article class="card" data-component="vts-portal-admin-list-card">
+            <div class="card__media">
+              <div class="slider" id="js-slider-vts-portal-admin-list" data-component="slider">
+                <ul class="slider__track">
+                  <li class="slider__slide is-active" data-slide-index="0">
+                    <a class="card__slide-link" href="sub/vts-portal-admin-list.html?id=vts-portal-admin-list" aria-label="VTS 상세페이지 관리자 공지사항 - VTS 상세페이지 관리자 공지사항 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-admin-list/vts-portal-admin-list-notice.png" alt="VTS 상세페이지 관리자 공지사항 화면 UI 스크린샷" width="400" height="225" loading="eager">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="1" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-admin-list.html?id=vts-portal-admin-list" aria-label="VTS 상세페이지 관리자 공지사항 등록 - VTS 상세페이지 관리자 공지사항 등록 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-admin-list/vts-portal-admin-list-notice-register.png" alt="VTS 상세페이지 관리자 공지사항 등록 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="2" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-admin-list.html?id=vts-portal-admin-list" aria-label="VTS 상세페이지 관리자 공지사항 상세보기 - VTS 상세페이지 관리자 공지사항 상세보기 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-admin-list/vts-portal-admin-list-notice-detail.png" alt="VTS 상세페이지 관리자 공지사항 상세보기 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="3" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-admin-list.html?id=vts-portal-admin-list" aria-label="VTS 상세페이지 관리자 공지사항 공지사항 수정 - VTS 상세페이지 관리자 공지사항 공지사항 수정 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-admin-list/vts-portal-admin-list-notice-edit.png" alt="VTS 상세페이지 관리자 공지사항 공지사항 수정 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="4" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-admin-list.html?id=vts-portal-admin-list" aria-label="VTS 상세페이지 관리자 공지사항 공지사항 수정 확인 - VTS 상세페이지 관리자 공지사항 공지사항 수정 확인 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-admin-list/vts-portal-admin-list-notice-edit-confirm.png" alt="VTS 상세페이지 관리자 공지사항 공지사항 수정 확인 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                  <li class="slider__slide" data-slide-index="5" hidden>
+                    <a class="card__slide-link" href="sub/vts-portal-admin-list.html?id=vts-portal-admin-list" aria-label="VTS 상세페이지 관리자 FAQ - VTS 상세페이지 관리자 FAQ 화면 상세보기">
+                      <img class="slider__image" src="../assets/images/vts-portal-admin-list/vts-portal-admin-list-faq.png" alt="VTS 상세페이지 관리자 FAQ 화면 UI 스크린샷" width="400" height="225" loading="lazy">
+                    </a>
+                  </li>
+                </ul>
+                <button type="button" class="slider__btn slider__btn--prev" data-action="slider:prev" aria-controls="js-slider-vts-portal-admin-list" aria-label="이전 스크린샷 보기">
+                  <span class="icon icon--arrow-left" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="slider__btn slider__btn--next" data-action="slider:next" aria-controls="js-slider-vts-portal-admin-list" aria-label="다음 스크린샷 보기">
+                  <span class="icon icon--arrow-right" aria-hidden="true"></span>
+                </button>
+                <div class="slider__dots" aria-label="VTS 포털 관리자 스크린샷 선택">
+                  <button type="button" class="slider__dot is-active" data-action="slider:goto" data-slide-index="0" aria-current="true" aria-label="1번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="1" aria-current="false" aria-label="2번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="2" aria-current="false" aria-label="3번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="3" aria-current="false" aria-label="4번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="4" aria-current="false" aria-label="5번째 스크린샷 보기"></button>
+                  <button type="button" class="slider__dot" data-action="slider:goto" data-slide-index="5" aria-current="false" aria-label="6번째 스크린샷 보기"></button>
+                </div>
+              </div>
+            </div>
+            <div class="card__content">
+              <div class="card__brand">
+                <h3 class="card__title"><a class="card__title-link" href="sub/vts-portal-admin-list.html?id=vts-portal-admin-list">VTS 솔루션 - 포털 관리자 상세페이지</a></h3>
+              </div>
+              <p class="card__category"> 
+                <span class="card__category-badge card__category-badge--collaboration">(주) 스마트프로</span>
+                <span class="card__category-badge card__category-badge--collaboration">솔루션</span>
+              </p>
+              <p class="card__desc">스마트프로 솔루션 프로그램 포털 관리자 권한 상세 페이지</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <p class="card-grid__empty" id="js-card-grid-empty" aria-live="polite" hidden>검색 결과가 없습니다.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__copyright">&copy; Yi Ga Seul Portfolio. All rights reserved.</p>
+      <nav class="site-footer__nav" aria-label="하단 메뉴">
+        <ul class="site-footer__nav-list">
+          <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#about">소개</a></li>
+          <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/utils/utils.js"></script>
+  <script src="../js/modules/theme-toggle.js"></script>
+  <script src="../js/modules/search-popover.js"></script>
+  <script src="../js/modules/slider.js"></script>
+  <script src="../js/modules/lightbox.js"></script>
+  <script src="../js/modules/card-search.js"></script>
+  <script src="../js/modules/gallery-search.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

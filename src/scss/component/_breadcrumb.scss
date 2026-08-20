@@ -1,0 +1,41 @@
+// src/scss/component/_breadcrumb.scss
+@use '../abstract/mixins' as *;
+
+.breadcrumb {
+  @include container;
+  padding-block: var(--spacing-md);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-2xs);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2xs);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-sm);
+
+    &:not(:last-child)::after {
+      content: '/';
+    }
+  }
+
+  &__link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-primary-base);
+      text-decoration: underline;
+    }
+  }
+
+  &__current {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+  }
+}

@@ -1,0 +1,41 @@
+// src/scss/base/_font-face.scss
+// Pretendard 웹폰트 등록 — 경로는 컴파일된 CSS 출력(src/scss/main.css) 기준 상대경로
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Pretendard-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Pretendard-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../assets/fonts/Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url('../assets/fonts/Pretendard-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Pretendard-Bold.woff') format('woff');
+}

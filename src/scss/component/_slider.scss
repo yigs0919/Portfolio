@@ -1,0 +1,98 @@
+// src/scss/component/_slider.scss
+@use '../abstract/mixins' as *;
+
+.slider {
+  position: relative;
+
+  &__slide[hidden] {
+    display: none;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__btn {
+    @include flex-center;
+    position: absolute;
+    top: 50%;
+    z-index: var(--z-local-raised-2);
+    width: 32px;
+    height: 32px;
+    transform: translateY(-50%);
+    border-radius: var(--radius-full);
+    background-color: var(--color-overlay);
+    opacity: 0;
+    transition: opacity var(--duration-fast) var(--easing-standard);
+
+    &--prev {
+      left: var(--spacing-sm);
+    }
+
+    &--next {
+      right: var(--spacing-sm);
+    }
+
+    &:focus-visible {
+      opacity: 1;
+    }
+  }
+
+  &:hover &__btn,
+  &:focus-within &__btn {
+    opacity: 1;
+  }
+
+  // 호버가 불가능한 터치 디바이스는 hover 진입 자체가 없어 버튼이 영구히 안 보이므로 상시 노출 (WCAG 2.2 포인터 입력 방식 독립성)
+  @media (hover: none) {
+    &__btn {
+      opacity: 1;
+    }
+  }
+
+  &__dots {
+    @include flex-center;
+    position: absolute;
+    bottom: var(--spacing-xs);
+    left: 50%;
+    z-index: var(--z-local-raised-2);
+    transform: translateX(-50%);
+  }
+
+  &__dot {
+    @include flex-center;
+    // 시각적으로는 8px 점이지만 WCAG 2.2 Target Size 대응을 위해 실제 hit area는 24x24 확보
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-full);
+      background-color: var(--color-primary-base);
+      opacity: 0.2;
+      transition:
+        opacity var(--duration-fast) var(--easing-standard),
+        background-color var(--duration-fast) var(--easing-standard);
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &.is-active::before {
+      background-color: var(--color-primary-base);
+      opacity: 1;
+    }
+  }
+}
+
+// 반투명 어두운 배경(overlay) 위 아이콘 대비 확보 — 다른 block(icon) 중첩을 피하기 위해 플랫 selector로 분리
+.slider__btn .icon {
+  filter: brightness(0) invert(1);
+}

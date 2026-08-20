@@ -1,0 +1,9 @@
+// src/scss/main.scss
+// 로드 순서 고정: abstract/token → abstract/mixins → base → layout → component → parts → pages → theme
+@use 'abstract';
+@use 'base';
+@use 'layout';
+@use 'component';
+@use 'parts';
+@use 'pages';
+@use 'theme';
