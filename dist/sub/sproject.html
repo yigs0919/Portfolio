@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 퍼블리셔 이가슬 - 포트폴리오</title>
+  <meta name="description" content="웹 퍼블리셔 이가슬 포트폴리오입니다.">
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="../assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', storedTheme);
+    })();
+  </script>
+
+  <a class="skip-link" href="#js-main">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html" aria-label="Yi Ga Seul Portfolio 홈으로 이동">
+        <span class="site-header__logo-text">Yi Ga Seul Portfolio</span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="주 메뉴">
+        <ul class="site-header__nav-list">
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="../index.html#about">소개</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="../index.html#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button type="button" class="site-header__action-btn" popovertarget="js-search-popover" aria-expanded="false" aria-controls="js-search-popover" aria-label="검색 열기" data-action="search:toggle">
+          <span class="icon icon--search" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="theme-switch" id="js-theme-toggle" role="switch" aria-checked="false" aria-label="다크 모드 전환" data-action="theme:toggle">
+          <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true"></span>
+          <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="site-header__search-popover" id="js-search-popover" popover="auto" aria-label="프로젝트 검색">
+        <form class="search-form" role="search" action="#" method="get">
+          <label class="search-form__label" for="js-search-input">검색어 입력</label>
+          <input class="search-form__input" type="search" id="js-search-input" name="q" placeholder="프로젝트 검색..." autocomplete="off">
+          <button type="submit" class="search-form__submit" aria-label="검색 실행">
+            <span class="icon icon--search" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="js-main" tabindex="-1">
+    <nav class="breadcrumb" aria-label="브레드크럼">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="../index.html">Home</a></li>
+        <li class="breadcrumb__item" aria-current="page"><span class="breadcrumb__current">S-Project</span></li>
+      </ol>
+    </nav>
+
+    <div class="detail-layout">
+      <aside class="detail-layout__sidebar" aria-label="S-Project 상세 정보">
+        <div class="detail-hero">
+          <div class="detail-hero__heading-group">
+            <h1 class="detail-hero__title">소규모 프로젝트</h1>
+          </div>
+
+          <div class="detail-hero__meta">
+            <span class="detail-hero__badge">(주) 스마트프로</span>
+            <span class="detail-hero__badge">소규모 과제</span>
+          </div>
+
+          <p class="detail-hero__desc">스마트프로 및 일부 대학교 연계 과제 프로젝트</p>
+        </div>
+
+        <dl class="detail-meta">
+          <div class="detail-meta__row">
+            <dt class="detail-meta__label">담당업무</dt>
+            <dd class="detail-meta__value">UI/UX 디자인, 웹 퍼블리싱</dd>
+          </div>
+          <div class="detail-meta__row">
+            <dt class="detail-meta__label">기간</dt>
+            <dd class="detail-meta__value">2023.07 ~ 2026.03</dd>
+          </div>
+        </dl>
+
+        <div class="tech-stack">
+          <h2 class="tech-stack__heading">기술 스택</h2>
+          <ul class="tech-stack__list" aria-label="S-Project 관련 기술 스택">
+            <li class="tech-stack__item"><span class="tech-stack__badge">Adobe Photoshop</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">Adobe Illustrator</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">HTML5</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">SCSS (Dart Sass)</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">CSS3</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">JavaScript</span></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="detail-gallery" aria-label="스크린샷 갤러리">
+        <ul class="detail-gallery__grid" id="js-detail-gallery">
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="0" aria-label="소규모프로젝트 충남대학교 메인 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-nprogr-third-floor.png" alt="소규모프로젝트 충남대학교 메인 화면 UI 스크린샷" width="480" height="270" loading="eager">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 충남대학교 메인</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="1" aria-label="소규모프로젝트 충남대학교 4층 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-nprogr-fourth-floor.png" alt="소규모프로젝트 충남대학교 4층 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 충남대학교 4층</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="2" aria-label="소규모프로젝트 충남대학교 4층 인원표시 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-nprogr-fourth-floor-number-of-people.png" alt="소규모프로젝트 충남대학교 4층 인원표시 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 충남대학교 4층 인원표시</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="3" aria-label="소규모프로젝트 한국해양대학교 메인 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-kmou-main.PNG" alt="소규모프로젝트 한국해양대학교 메인 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 한국해양대학교 메인</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="4" aria-label="소규모프로젝트 한국해양대학교 상면 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-kmou-top.PNG" alt="소규모프로젝트 한국해양대학교 상면 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 한국해양대학교 상면</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="5" aria-label="소규모프로젝트 한국해양대학교 측면 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-kmou-side.PNG" alt="소규모프로젝트 한국해양대학교 측면 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 한국해양대학교 측면</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="6" aria-label="소규모프로젝트 한국해양대학교 내부 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-kmou-inside.PNG" alt="소규모프로젝트 한국해양대학교 내부 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 한국해양대학교 내부</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="7" aria-label="소규모프로젝트 한국해양대학교 설비 정보 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-kmou-info.PNG" alt="소규모프로젝트 한국해양대학교 설비 정보 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 한국해양대학교 설비 정보</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="8" aria-label="소규모프로젝트 한국해양대학교 시뮬레이션 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-kmou-simulation.PNG" alt="소규모프로젝트 한국해양대학교 시뮬레이션 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 한국해양대학교 시뮬레이션</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="9" aria-label="소규모프로젝트 디지털트윈 템플릿 메인 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-template.png" alt="소규모프로젝트 디지털트윈 템플릿 메인 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 디지털트윈 템플릿 메인</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="10" aria-label="소규모프로젝트 디지털트윈 템플릿 버튼 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-template-button.png" alt="소규모프로젝트 디지털트윈 템플릿 버튼 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 디지털트윈 템플릿 버튼</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="11" aria-label="소규모프로젝트 디지털트윈 템플릿 콘텐츠 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-template-content.png" alt="소규모프로젝트 디지털트윈 템플릿 콘텐츠 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 디지털트윈 템플릿 콘텐츠</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="12" aria-label="소규모프로젝트 디지털트윈 템플릿 타이틀 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-template-title.png" alt="소규모프로젝트 디지털트윈 템플릿 타이틀 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 디지털트윈 템플릿 타이틀</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="13" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 애니메이션 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-animation.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 애니메이션 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 애니메이션</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="14" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 애니메이션 추가 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-animation-add.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 애니메이션 추가 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 애니메이션 추가</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="15" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-data.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="16" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 문서 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-data-document.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 문서 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 문서</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="17" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 메타데이터 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-data-metadata.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 메타데이터 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 메타데이터</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="18" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 태그데이터 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-data-tagdata.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 태그데이터 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 데이터 태그데이터</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="19" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 상세 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-detail.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 상세 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 상세</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="20" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 효과 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-effect.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 효과 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 효과</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="21" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 모델 상세 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-model-detail.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 모델 상세 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 모델 상세</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="22" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 모델 메쉬 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-model-mesh.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 모델 메쉬 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 모델 메쉬</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="23" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 신규 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-new.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 신규 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 신규</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="24" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 선택 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-select.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 선택 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 선택</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="25" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 선택 완료 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-select-completed.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 선택 완료 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 선택 완료</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="26" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 시퀀스 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-sequence.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 시퀀스 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 시퀀스</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="27" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 에디터 시퀀스 편집 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-editor-sequence-edit.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 에디터 시퀀스 편집 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 에디터 시퀀스 편집</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="28" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 애니메이션 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-viewer-animation.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 애니메이션 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 뷰어 애니메이션</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="29" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 배경 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-viewer-background.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 배경 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 뷰어 배경</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="30" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 효과 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-viewer-effect.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 효과 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 뷰어 효과</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="31" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 그리드 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-viewer-grid.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 그리드 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 뷰어 그리드</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="32" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 ISO 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-viewer-iso.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 ISO 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 뷰어 ISO</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="33" aria-label="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 네임태그 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-component-viewer-nametag.png" alt="소규모프로젝트 비주얼라이저 컴포넌트 뷰어 네임태그 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 컴포넌트 뷰어 네임태그</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="34" aria-label="소규모프로젝트 비주얼라이저 시스템 에디터 컴포넌트 목록 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-editor-component-list.png" alt="소규모프로젝트 비주얼라이저 시스템 에디터 컴포넌트 목록 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 에디터 컴포넌트 목록</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="35" aria-label="소규모프로젝트 비주얼라이저 시스템 에디터 컴포넌트 설정 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-editor-component-setting.png" alt="소규모프로젝트 비주얼라이저 시스템 에디터 컴포넌트 설정 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 에디터 컴포넌트 설정</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="36" aria-label="소규모프로젝트 비주얼라이저 시스템 에디터 가져오기 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-editor-import.png" alt="소규모프로젝트 비주얼라이저 시스템 에디터 가져오기 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 에디터 가져오기</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="37" aria-label="소규모프로젝트 비주얼라이저 시스템 에디터 신규 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-editor-new.png" alt="소규모프로젝트 비주얼라이저 시스템 에디터 신규 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 에디터 신규</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="38" aria-label="소규모프로젝트 비주얼라이저 시스템 에디터 노드플로우 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-editor-nodeflow.png" alt="소규모프로젝트 비주얼라이저 시스템 에디터 노드플로우 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 에디터 노드플로우</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="39" aria-label="소규모프로젝트 비주얼라이저 시스템 에디터 선택 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-editor-select.png" alt="소규모프로젝트 비주얼라이저 시스템 에디터 선택 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 에디터 선택</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="40" aria-label="소규모프로젝트 비주얼라이저 시스템 에디터 시스템 설정 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-editor-system-setting.png" alt="소규모프로젝트 비주얼라이저 시스템 에디터 시스템 설정 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 에디터 시스템 설정</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="41" aria-label="소규모프로젝트 비주얼라이저 시스템 뷰어 컴포넌트 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-viewer-components.png" alt="소규모프로젝트 비주얼라이저 시스템 뷰어 컴포넌트 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 뷰어 컴포넌트</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="42" aria-label="소규모프로젝트 비주얼라이저 시스템 뷰어 플로우 목록 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/s-project/sp-visualizer-system-viewer-flowlist.png" alt="소규모프로젝트 비주얼라이저 시스템 뷰어 플로우 목록 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">소규모프로젝트 비주얼라이저 시스템 뷰어 플로우 목록</figcaption>
+            </figure>
+          </li>
+        </ul>
+        <p class="detail-gallery__empty" id="js-detail-gallery-empty" aria-live="polite" hidden>검색 결과가 없습니다.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <p class="site-footer__copyright">&copy; Yi Ga Seul Portfolio. All rights reserved.</p>
+        <ul class="site-footer__contact" aria-label="연락처">
+          <li>
+            <a class="site-footer__contact-link" href="mailto:yigaseul@naver.com">
+              <span class="icon icon--mail" aria-hidden="true"></span>
+              yigaseul@naver.com
+            </a>
+          </li>
+          <li>
+            <a class="site-footer__contact-link" href="tel:010-2817-9522">
+              <span class="icon icon--phone" aria-hidden="true"></span>
+              010-2817-9522
+            </a>
+          </li>
+          <li>
+            <a class="site-footer__contact-link" href="https://github.com/yigs0919/Portfolio" target="_blank" rel="noopener noreferrer">
+              <span class="icon icon--github" aria-hidden="true"></span>
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav class="site-footer__nav" aria-label="하단 메뉴">
+        <ul class="site-footer__nav-list">
+          <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="../index.html#about">소개</a></li>
+          <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="../index.html#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="js-lightbox" aria-labelledby="js-lightbox-caption">
+    <div class="lightbox__inner">
+      <button type="button" class="lightbox__close" data-action="modal:close" aria-label="이미지 확대보기 닫기">
+        <span class="icon icon--close" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-action="modal:prev" aria-label="이전 이미지 보기">
+        <span class="icon icon--arrow-left" aria-hidden="true"></span>
+      </button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__image" id="js-lightbox-image" src="" alt="확대 이미지 미리보기" width="1280" height="720">
+        <figcaption class="lightbox__caption" id="js-lightbox-caption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-action="modal:next" aria-label="다음 이미지 보기">
+        <span class="icon icon--arrow-right" aria-hidden="true"></span>
+      </button>
+      <p class="lightbox__counter" id="js-lightbox-counter" aria-live="polite">1 / 43</p>
+    </div>
+  </dialog>
+
+  <script src="../js/utils/utils.js"></script>
+  <script src="../js/modules/theme-toggle.js"></script>
+  <script src="../js/modules/search-popover.js"></script>
+  <script src="../js/modules/slider.js"></script>
+  <script src="../js/modules/lightbox.js"></script>
+  <script src="../js/modules/card-search.js"></script>
+  <script src="../js/modules/gallery-search.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

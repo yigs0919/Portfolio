@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 퍼블리셔 이가슬 - 포트폴리오</title>
+  <meta name="description" content="웹 퍼블리셔 이가슬 포트폴리오입니다.">
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="../assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <script>
+    (function () {
+      const storedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', storedTheme);
+    })();
+  </script>
+
+  <a class="skip-link" href="#js-main">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="../index.html" aria-label="Yi Ga Seul Portfolio 홈으로 이동">
+        <span class="site-header__logo-text">Yi Ga Seul Portfolio</span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="주 메뉴">
+        <ul class="site-header__nav-list">
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="../index.html#about">소개</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="../index.html#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <button type="button" class="site-header__action-btn" popovertarget="js-search-popover" aria-expanded="false" aria-controls="js-search-popover" aria-label="검색 열기" data-action="search:toggle">
+          <span class="icon icon--search" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="theme-switch" id="js-theme-toggle" role="switch" aria-checked="false" aria-label="다크 모드 전환" data-action="theme:toggle">
+          <span class="theme-switch__icon theme-switch__icon--sun" aria-hidden="true"></span>
+          <span class="theme-switch__icon theme-switch__icon--moon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="site-header__search-popover" id="js-search-popover" popover="auto" aria-label="프로젝트 검색">
+        <form class="search-form" role="search" action="#" method="get">
+          <label class="search-form__label" for="js-search-input">검색어 입력</label>
+          <input class="search-form__input" type="search" id="js-search-input" name="q" placeholder="프로젝트 검색..." autocomplete="off">
+          <button type="submit" class="search-form__submit" aria-label="검색 실행">
+            <span class="icon icon--search" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="js-main" tabindex="-1">
+    <nav class="breadcrumb" aria-label="브레드크럼">
+      <ol class="breadcrumb__list">
+        <li class="breadcrumb__item"><a class="breadcrumb__link" href="../index.html">Home</a></li>
+        <li class="breadcrumb__item" aria-current="page"><span class="breadcrumb__current">VTS Builder</span></li>
+      </ol>
+    </nav>
+
+    <div class="detail-layout">
+      <aside class="detail-layout__sidebar" aria-label="VTS Builder 상세 정보">
+        <div class="detail-hero">
+          <div class="detail-hero__heading-group">
+            <h1 class="detail-hero__title">VTS 솔루션 - 빌더</h1>
+          </div>
+
+          <div class="detail-hero__meta">
+            <span class="detail-hero__badge">(주) 스마트프로</span>
+            <span class="detail-hero__badge">솔루션</span>
+          </div>
+
+          <p class="detail-hero__desc">자체 솔루션 프로그램 빌더 페이지</p>
+        </div>
+
+        <dl class="detail-meta">
+          <div class="detail-meta__row">
+            <dt class="detail-meta__label">담당업무</dt>
+            <dd class="detail-meta__value">웹 퍼블리싱</dd>
+          </div>
+          <div class="detail-meta__row">
+            <dt class="detail-meta__label">기간</dt>
+            <dd class="detail-meta__value">2025.01 ~ 2026.06</dd>
+          </div>
+        </dl>
+
+        <div class="tech-stack">
+          <h2 class="tech-stack__heading">기술 스택</h2>
+          <ul class="tech-stack__list" aria-label="VTS Builder 관련 기술 스택">
+            <li class="tech-stack__item"><span class="tech-stack__badge">HTML5</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">SCSS (Dart Sass)</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">CSS3</span></li>
+            <li class="tech-stack__item"><span class="tech-stack__badge">JavaScript</span></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="detail-layout__content">
+        <section class="detail-story" aria-labelledby="detail-story-heading">
+          <h2 class="detail-story__heading" id="detail-story-heading">문제 해결 과정</h2>
+          <div class="detail-story__grid">
+            <div class="detail-story__block">
+              <h3 class="detail-story__label">문제</h3>
+              <p class="detail-story__text">상용 드래그 앤 드롭 라이브러리로는 사용자가 콘텐츠를 자유롭게 배치하고 템플릿으로 저장하는 기능을 반응형으로 구현하기 어려웠습니다. 좌표값 기반 배치가 화면 크기에 따라 깨지는 문제가 반복됐습니다.</p>
+            </div>
+            <div class="detail-story__block">
+              <h3 class="detail-story__label">해결</h3>
+              <p class="detail-story__text">라이브러리의 기본 뼈대만 남기고 좌표값 계산 엔진과 애니메이션 로직을 직접 다시 설계했습니다. 부모 요소 규격에 맞춰 비율이 유지되도록 구조를 바꾸고, 모바일 뷰 전환 로직까지 보완했습니다.</p>
+            </div>
+            <div class="detail-story__block">
+              <h3 class="detail-story__label">성과</h3>
+              <p class="detail-story__text">대응 해상도 범위를 대폭 넓혀, 다양한 화면 크기에서도 배치가 무너지지 않는 빌더 환경을 만들었습니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="detail-gallery" aria-label="스크린샷 갤러리">
+        <ul class="detail-gallery__grid" id="js-detail-gallery">
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="0" aria-label="VTS 빌더 메인 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder.png" alt="VTS 빌더 메인 화면 UI 스크린샷" width="480" height="270" loading="eager">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 메인</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="1" aria-label="VTS 빌더 메인 다크모드 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder-dark.png" alt="VTS 빌더 메인 다크모드 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 메인 다크모드</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="2" aria-label="VTS 빌더 코치마크 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder-coachmark.png" alt="VTS 빌더 코치마크 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 코치마크</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="3" aria-label="VTS 빌더 코치마크 다크모드 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder-coachmark-dark.png" alt="VTS 빌더 코치마크 다크모드 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 코치마크 다크모드</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="4" aria-label="VTS 빌더 즐겨찾기 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder-favorite.png" alt="VTS 빌더 즐겨찾기 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 즐겨찾기</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="5" aria-label="VTS 빌더 즐겨찾기 다크모드 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder-favorite-dark.png" alt="VTS 빌더 즐겨찾기 다크모드 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 즐겨찾기 다크모드</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="6" aria-label="VTS 빌더 템플릿 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder-template.png" alt="VTS 빌더 템플릿 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 템플릿</figcaption>
+            </figure>
+          </li>
+          <li class="detail-gallery__item">
+            <figure class="detail-gallery__figure">
+              <button type="button" class="detail-gallery__trigger" data-action="modal:open" data-image-index="7" aria-label="VTS 빌더 템플릿 다크모드 확대 보기">
+                <img class="detail-gallery__image" src="../assets/images/vts_builder/vts-builder-template-dark.png" alt="VTS 빌더 템플릿 다크모드 화면 UI 스크린샷" width="480" height="270" loading="lazy">
+              </button>
+              <figcaption class="detail-gallery__caption">VTS 빌더 템플릿 다크모드</figcaption>
+            </figure>
+          </li>
+        </ul>
+        <p class="detail-gallery__empty" id="js-detail-gallery-empty" aria-live="polite" hidden>검색 결과가 없습니다.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <p class="site-footer__copyright">&copy; Yi Ga Seul Portfolio. All rights reserved.</p>
+        <ul class="site-footer__contact" aria-label="연락처">
+          <li>
+            <a class="site-footer__contact-link" href="mailto:yigaseul@naver.com">
+              <span class="icon icon--mail" aria-hidden="true"></span>
+              yigaseul@naver.com
+            </a>
+          </li>
+          <li>
+            <a class="site-footer__contact-link" href="tel:010-2817-9522">
+              <span class="icon icon--phone" aria-hidden="true"></span>
+              010-2817-9522
+            </a>
+          </li>
+          <li>
+            <a class="site-footer__contact-link" href="https://github.com/yigs0919/Portfolio" target="_blank" rel="noopener noreferrer">
+              <span class="icon icon--github" aria-hidden="true"></span>
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+      <nav class="site-footer__nav" aria-label="하단 메뉴">
+        <ul class="site-footer__nav-list">
+          <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="../index.html#about">소개</a></li>
+          <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="../index.html#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="js-lightbox" aria-labelledby="js-lightbox-caption">
+    <div class="lightbox__inner">
+      <button type="button" class="lightbox__close" data-action="modal:close" aria-label="이미지 확대보기 닫기">
+        <span class="icon icon--close" aria-hidden="true"></span>
+      </button>
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-action="modal:prev" aria-label="이전 이미지 보기">
+        <span class="icon icon--arrow-left" aria-hidden="true"></span>
+      </button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__image" id="js-lightbox-image" src="" alt="확대 이미지 미리보기" width="1280" height="720">
+        <figcaption class="lightbox__caption" id="js-lightbox-caption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-action="modal:next" aria-label="다음 이미지 보기">
+        <span class="icon icon--arrow-right" aria-hidden="true"></span>
+      </button>
+      <p class="lightbox__counter" id="js-lightbox-counter" aria-live="polite">1 / 3</p>
+    </div>
+  </dialog>
+
+  <script src="../js/utils/utils.js"></script>
+  <script src="../js/modules/theme-toggle.js"></script>
+  <script src="../js/modules/search-popover.js"></script>
+  <script src="../js/modules/slider.js"></script>
+  <script src="../js/modules/lightbox.js"></script>
+  <script src="../js/modules/card-search.js"></script>
+  <script src="../js/modules/gallery-search.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
