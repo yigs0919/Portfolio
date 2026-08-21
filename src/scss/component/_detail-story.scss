@@ -1,0 +1,43 @@
+// src/scss/component/_detail-story.scss
+// 프로젝트 문제 해결 과정(문제/해결/성과) — 구체적 사례가 있는 프로젝트 상세페이지에서 선택적으로 사용
+@use '../abstract/mixins' as *;
+
+.detail-story {
+  &__heading {
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+
+    @include respond-to('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__block {
+    padding: var(--spacing-md);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary-base);
+    border-radius: var(--radius-md);
+  }
+
+  &__label {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  &__text {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+  }
+}

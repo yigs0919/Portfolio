@@ -1,0 +1,42 @@
+// src/scss/component/_button.scss
+// 공통 CTA 버튼 — hero__actions(연락 CTA) 등에서 재사용
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: {
+    property:        background-color, border-color, color, transform;
+    duration:         var(--duration-fast);
+    timing-function:  var(--easing-standard);
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &--primary {
+    background-color: var(--color-primary-base);
+    color: var(--color-text-on-primary);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+  }
+
+  &--ghost {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+
+    &:hover {
+      background-color: var(--color-surface-hover);
+      border-color: var(--color-text-tertiary);
+    }
+  }
+}

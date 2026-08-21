@@ -17,4 +17,12 @@
     flex-direction: column;
     gap: var(--spacing-xl);
   }
+
+  // 사이드바를 제외한 우측 컬럼 — detail-story(있는 경우) + detail-gallery를 세로로 쌓는 래퍼
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    min-width: 0;
+  }
 }

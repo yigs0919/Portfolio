@@ -1,0 +1,118 @@
+// src/scss/parts/_featured.scss
+// 대표 프로젝트 — hero와 전체 프로젝트 그리드 사이, 우선순위 상위 프로젝트를 비대칭(bento) 레이아웃으로 강조
+@use '../abstract/mixins' as *;
+
+.featured {
+  @include container;
+  padding-block: var(--spacing-2xl);
+
+  &__heading {
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+
+    @include respond-to('tablet') {
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__item {
+    @include card-shell;
+  }
+
+  &__item--primary {
+    @include respond-to('tablet') {
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__item--primary .featured__media {
+    @include respond-to('tablet') {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  &__item--primary .featured__title {
+    @include respond-to('tablet') {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--easing-standard);
+  }
+
+  &__link:hover .featured__image,
+  &__link:focus-visible .featured__image {
+    transform: scale(1.04);
+  }
+
+  &__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+  }
+
+  &__category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2xs);
+  }
+
+  &__badge {
+    @include chip;
+  }
+
+  &__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+
+  &__desc {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+  }
+
+  // 담당 역할/기여 한 줄 — desc(프로젝트 소개)와 구분되는 보조 정보
+  &__role {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-2xs);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-xs);
+  }
+
+  &__role-label {
+    flex-shrink: 0;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+  }
+}

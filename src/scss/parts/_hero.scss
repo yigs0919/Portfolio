@@ -5,10 +5,6 @@
   padding-block: var(--spacing-3xl);
   background-color: var(--color-surface);
 
-  &__name {
-    @include visually-hidden;
-  }
-
   &__inner {
     max-width: 720px;
     margin-inline: auto;
@@ -39,11 +35,74 @@
     box-shadow: var(--shadow-sm);
   }
 
+  // ---------------------------------------------------------------------------
+  // Intro — 이름 / 태그라인 / 연락 CTA / 경력을 묶는 텍스트 컬럼
+  // ---------------------------------------------------------------------------
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    width: 100%;
+  }
+
+  &__eyebrow {
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  &__name {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+
+    @include respond-to('tablet') {
+      font-size: var(--font-size-4xl);
+    }
+  }
+
+  &__tagline {
+    max-width: 52ch;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-relaxed);
+  }
+
+  // 핵심 역량 배지 로우 — tagline 아래, 연락 CTA 위
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xs);
+
+    @include respond-to('tablet') {
+      justify-content: flex-start;
+    }
+  }
+
+  &__skill-badge {
+    @include chip;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+
+    @include respond-to('tablet') {
+      justify-content: flex-start;
+    }
+  }
+
   &__career {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
     width: 100%;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
   }
 
   &__career-heading {

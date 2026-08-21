@@ -6,16 +6,43 @@
   background-color: var(--color-surface);
 
   &__inner {
-    @include flex-between;
     @include container;
+    display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+    padding-block: var(--spacing-xl);
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-sm);
-    padding-block: var(--spacing-lg);
   }
 
   &__copyright {
     color: var(--color-text-tertiary);
     font-size: var(--font-size-sm);
+  }
+
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  &__contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2xs);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-primary-base);
+    }
   }
 
   &__nav-list {

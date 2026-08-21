@@ -15,11 +15,11 @@
 src/
 ├── assets/
 │   ├── fonts/          # Pretendard 웹폰트 (woff/woff2)
-│   ├── icons/           # 인터랙션 아이콘 SVG (검색/화살표/닫기/테마 등)
+│   ├── icons/           # 인터랙션 아이콘 SVG (검색/화살표/닫기/테마/연락처(메일·전화·GitHub) 등)
 │   └── images/           # 프로젝트별 스크린샷 (프로젝트명 하위 폴더로 구분)
 ├── html/
-│   ├── index.html        # 메인 페이지 — 프로필 소개 + 프로젝트 카드 그리드
-│   └── sub/               # 프로젝트별 상세 페이지 (갤러리 + 라이트박스)
+│   ├── index.html        # 메인 페이지 — 프로필 소개 + 대표 프로젝트 + 프로젝트 카드 그리드
+│   └── sub/               # 프로젝트별 상세 페이지 (갤러리 + 라이트박스, 일부는 케이스 스터디 포함)
 ├── js/
 │   ├── main.js             # DOMContentLoaded 시점에 각 모듈 init 함수 호출
 │   ├── modules/              # 기능별 모듈 (슬라이더/라이트박스/검색/테마 토글 등)
@@ -28,8 +28,8 @@ src/
     ├── abstract/    # 디자인 토큰, 반응형/유틸리티 mixin
     ├── base/         # reset, typography, 폰트 등록
     ├── layout/        # header, footer, container
-    ├── component/      # card, slider, lightbox, breadcrumb 등 컴포넌트 단위 스타일
-    ├── parts/           # hero, detail-layout 등 페이지 조합 단위
+    ├── component/      # card, slider, lightbox, breadcrumb, button, detail-story 등 컴포넌트 단위 스타일
+    ├── parts/           # hero, featured(대표 프로젝트), detail-layout 등 페이지 조합 단위
     ├── pages/             # 페이지별 미세 조정
     ├── theme/              # light/dark 테마 오버라이드
     ├── main.scss            # 전체 로드 순서를 고정하는 진입점
@@ -44,6 +44,9 @@ src/
 - **라이트박스**: 네이티브 `<dialog>` 기반 이미지 확대 보기, 이전/다음 순환
 - **다크모드 토글**: `localStorage` 기반, `<body>` 최상단 inline script로 FOUC 방지
 - **검색 popover**: 네이티브 `popover="auto"` 속성 활용
+- **히어로 연락 CTA + 핵심 역량 배지**: 이메일/GitHub/전화 링크(`mailto:`/`tel:`)와 시맨틱 마크업·웹접근성·QA 프로세스 등 역량 배지 노출
+- **대표 프로젝트(Featured) 섹션**: 우선순위 상위 프로젝트를 비대칭(bento) 그리드로 강조 — 전체 카드 그리드와 별개로 메인 상단에 노출
+- **프로젝트 케이스 스터디**: 일부 상세 페이지(`detail-story` 컴포넌트)에 문제 → 해결 → 성과 형식으로 구체적 작업 사례 기술
 - **접근성**: WCAG 2.2 AA 기준 준수 (Target Size, Focus Not Obscured, 키보드 접근성, ARIA 레이블 등)
 
 ## 실행 방법

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>웹 퍼블리셔 이가슬 - 포트폴리오</title>
   <meta name="description" content="웹 퍼블리셔 이가슬 포트폴리오입니다.">
+  <meta name="robots" content="noindex">
   <link rel="preload" href="../assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/images/yigs_profile.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="../scss/main.css">
@@ -54,26 +55,108 @@
 
   <main class="main" id="js-main" tabindex="-1">
     <section class="hero" id="about" aria-labelledby="hero-heading">
-      <h1 class="hero__name" id="hero-heading">이가슬 — 웹 퍼블리셔 포트폴리오</h1>
       <div class="hero__inner">
         <div class="hero__photo">
           <img class="hero__photo-image" src="../assets/images/yigs_profile.jpg" alt="이가슬 증명사진" width="240" height="320" loading="eager">
         </div>
-        <div class="hero__career">
-          <h2 class="hero__career-heading">경력</h2>
-          <p class="hero__education">한밭대학교 컴퓨터공학과 졸업</p>
-          <ul class="hero__career-list">
-            <li class="hero__career-item">
-              <span class="hero__career-period">2021.03 – 2021.12</span>
-              <span class="hero__career-role">(주)에어사운드 · 프론트엔드 웹 개발자</span>
-            </li>
-            <li class="hero__career-item">
-              <span class="hero__career-period">2022.07 – 현재</span>
-              <span class="hero__career-role">(주)스마트프로 · UI/UX 디자이너, 웹 퍼블리셔</span>
-            </li>
+        <div class="hero__intro">
+          <p class="hero__eyebrow">Web Publisher</p>
+          <h1 class="hero__name" id="hero-heading">이가슬</h1>
+          <p class="hero__tagline">기획과 디자인의 맥락을 놓치지 않는 4년차 퍼블리셔입니다. 정교한 UI 구현은 물론, 자동화 워크플로우를 활용해 작업 공수를 줄이고 팀의 협업 생산성을 높이는 데 집중합니다.</p>
+
+          <ul class="hero__skills" aria-label="핵심 역량">
+            <li class="hero__skill-badge">시맨틱 마크업</li>
+            <li class="hero__skill-badge">웹 접근성(WAI-ARIA)</li>
+            <li class="hero__skill-badge">디자인 토큰화</li>
+            <li class="hero__skill-badge">UI/UX QA 검증 프로세스</li>
+            <li class="hero__skill-badge">반응형 대응</li>
           </ul>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="mailto:yigaseul@naver.com">
+              <span class="icon icon--mail" aria-hidden="true"></span>
+              이메일 보내기
+            </a>
+            <a class="btn btn--ghost" href="https://github.com/yigs0919/Portfolio" target="_blank" rel="noopener noreferrer">
+              <span class="icon icon--github" aria-hidden="true"></span>
+              GitHub
+            </a>
+            <a class="btn btn--ghost" href="tel:010-2817-9522">
+              <span class="icon icon--phone" aria-hidden="true"></span>
+              010-2817-9522
+            </a>
+          </div>
+
+          <div class="hero__career">
+            <h2 class="hero__career-heading">경력</h2>
+            <p class="hero__education">한밭대학교 컴퓨터공학과 졸업</p>
+            <ul class="hero__career-list">
+              <li class="hero__career-item">
+                <span class="hero__career-period">2021.03 – 2021.12</span>
+                <span class="hero__career-role">(주)에어사운드 · 프론트엔드 웹 개발자</span>
+              </li>
+              <li class="hero__career-item">
+                <span class="hero__career-period">2022.07 – 현재</span>
+                <span class="hero__career-role">(주)스마트프로 · UI/UX 디자이너, 웹 퍼블리셔</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="featured" aria-labelledby="featured-heading">
+      <h2 class="featured__heading" id="featured-heading">대표 프로젝트</h2>
+      <ul class="featured__grid">
+        <li class="featured__item featured__item--primary">
+          <a class="featured__link" href="sub/dt.html?id=dt">
+            <div class="featured__media">
+              <img class="featured__image" src="../assets/images/dt/dt-main.png" alt="디지털트윈 메인 화면 UI 스크린샷" width="600" height="450" loading="lazy">
+            </div>
+            <div class="featured__content">
+              <p class="featured__category">
+                <span class="featured__badge">한국수력원자력</span>
+                <span class="featured__badge">용역</span>
+              </p>
+              <h3 class="featured__title">디지털트윈</h3>
+              <p class="featured__desc">APR1400 디지털트윈 구축을 위한 가시화 및 Metaverse 운영 플랫폼</p>
+              <p class="featured__role"><span class="featured__role-label">담당</span>디자인 시스템 파운데이션 구축부터 다크모드 대응까지 마크업 전 과정</p>
+            </div>
+          </a>
+        </li>
+        <li class="featured__item">
+          <a class="featured__link" href="sub/tikitanote.html?id=tikitanote">
+            <div class="featured__media">
+              <img class="featured__image" src="../assets/images/tikitanote/tikitanote-ui-wireframe.PNG" alt="티키타노트 와이어프레임 화면 UI 스크린샷" width="600" height="338" loading="lazy">
+            </div>
+            <div class="featured__content">
+              <p class="featured__category">
+                <span class="featured__badge">(주) 에어사운드</span>
+                <span class="featured__badge">솔루션</span>
+              </p>
+              <h3 class="featured__title">티키타노트</h3>
+              <p class="featured__desc">AI 음성인식 기반 다자간 회의 자동 기록 및 관리 플랫폼</p>
+              <p class="featured__role"><span class="featured__role-label">담당</span>와이어프레임부터 상세 기능 화면까지 전체 마크업 구현</p>
+            </div>
+          </a>
+        </li>
+        <li class="featured__item">
+          <a class="featured__link" href="sub/vts-presenter.html?id=vts-presenter">
+            <div class="featured__media">
+              <img class="featured__image" src="../assets/images/vts-presenter/vts-presenter-ui-specification.PNG" alt="VTS 프레젠터 화면정의서 화면 UI 스크린샷" width="600" height="338" loading="lazy">
+            </div>
+            <div class="featured__content">
+              <p class="featured__category">
+                <span class="featured__badge">(주) 스마트프로</span>
+                <span class="featured__badge">솔루션</span>
+              </p>
+              <h3 class="featured__title">VTS 솔루션 - 프레젠터</h3>
+              <p class="featured__desc">스마트프로 솔루션 프로그램 템플릿 구성 페이지</p>
+              <p class="featured__role"><span class="featured__role-label">담당</span>화면정의서 작성부터 리사이저·미리보기 등 인터랙션 마크업까지 전 과정</p>
+            </div>
+          </a>
+        </li>
+      </ul>
     </section>
 
     <section class="card-grid-section" id="developer-tools" aria-labelledby="card-grid-heading">
@@ -1107,7 +1190,29 @@
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p class="site-footer__copyright">&copy; Yi Ga Seul Portfolio. All rights reserved.</p>
+      <div class="site-footer__brand">
+        <p class="site-footer__copyright">&copy; Yi Ga Seul Portfolio. All rights reserved.</p>
+        <ul class="site-footer__contact" aria-label="연락처">
+          <li>
+            <a class="site-footer__contact-link" href="mailto:yigaseul@naver.com">
+              <span class="icon icon--mail" aria-hidden="true"></span>
+              yigaseul@naver.com
+            </a>
+          </li>
+          <li>
+            <a class="site-footer__contact-link" href="tel:010-2817-9522">
+              <span class="icon icon--phone" aria-hidden="true"></span>
+              010-2817-9522
+            </a>
+          </li>
+          <li>
+            <a class="site-footer__contact-link" href="https://github.com/yigs0919/Portfolio" target="_blank" rel="noopener noreferrer">
+              <span class="icon icon--github" aria-hidden="true"></span>
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
       <nav class="site-footer__nav" aria-label="하단 메뉴">
         <ul class="site-footer__nav-list">
           <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#about">소개</a></li>

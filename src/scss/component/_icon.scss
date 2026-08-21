@@ -42,4 +42,22 @@
     height: 20px;
     background-image: url('../assets/icons/ico--close.svg');
   }
+
+  &--mail {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/ico--mail.svg');
+  }
+
+  &--phone {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/ico--phone.svg');
+  }
+
+  &--github {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/ico--github.svg');
+  }
 }
