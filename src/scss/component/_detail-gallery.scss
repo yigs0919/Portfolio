@@ -18,15 +18,15 @@
     }
   }
 
-  // 뷰포트 밖 아이템 초기 렌더 비용 절감 (다수가 최초 뷰포트 밖에 위치)
-  // 아이템 너비가 breakpoint별로 유동(모바일 100% / 태블릿 이상 50%)이라
-  // auto 접두사로 최초 1회는 fallback 값을 쓰고 이후엔 실제 렌더 크기를 기억해 재사용 (폭 흔들림 방지)
   &__item {
     // grid item 자동 최소 크기가 내부 img(갤러리 이미지)의 콘텐츠 기반 크기로 잡혀 1fr 트랙이
     // 모바일에서 뷰포트보다 넓게 밀려나는 것을 방지 (.card-grid__item과 동일한 grid-item overflow 버그)
     min-width: 0;
-    content-visibility: auto;
-    contain-intrinsic-size: auto 480px auto 400px;
+    // content-visibility: auto + contain-intrinsic-size(뷰포트 밖 아이템 초기 렌더 비용 절감 목적)는 제거함 —
+    // fallback 크기(480×400)가 실제 렌더 크기(브레이크포인트별 유동 폭 기준 약 370×230)와 달라,
+    // 처음 로드 시 화면 밖에 있던 아이템이 부풀려진 크기로 보였다가 스크롤/리사이즈로 실제 크기가
+    // 측정되는 순간에야 스냅되는 버그가 있었다. 갤러리가 최대 40장 안팎이라 content-visibility 없이도
+    // 렌더 비용이 크지 않고, 이미지 자체는 이미 loading="lazy"로 지연 로드되므로 제거해도 성능상 문제없음.
   }
 
   &__figure {

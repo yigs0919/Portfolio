@@ -700,7 +700,6 @@ h6 {
 }
 .card-grid__item {
   min-width: 0;
-  content-visibility: auto;
 }
 
 .card {
@@ -1048,8 +1047,6 @@ h6 {
 }
 .detail-gallery__item {
   min-width: 0;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 480px auto 400px;
 }
 .detail-gallery__figure {
   display: flex;
