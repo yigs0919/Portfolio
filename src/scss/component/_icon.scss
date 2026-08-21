@@ -31,6 +31,21 @@
     background-image: url('../assets/icons/ico--arrow-right.svg');
   }
 
+  // 별도 svg 없이 arrow-right를 회전시켜 재사용 (scroll-fab 상단/하단 이동 버튼)
+  &--arrow-up {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/ico--arrow-right.svg');
+    transform: rotate(-90deg);
+  }
+
+  &--arrow-down {
+    width: 16px;
+    height: 16px;
+    background-image: url('../assets/icons/ico--arrow-right.svg');
+    transform: rotate(90deg);
+  }
+
   /* &--external-link {
     width: 14px;
     height: 14px;

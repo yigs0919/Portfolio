@@ -41,6 +41,12 @@
     height: 16px;
     transform: translate(-50%, -50%);
     background-color: var(--color-text-tertiary);
+    // mask-image가 외부 svg 파일(url())을 참조하면 file:// 프로토콜에서 크로스오리진으로 취급되어
+    // 로드 자체가 조용히 실패한다 — 인라인 data URI로 바꿔 프로토콜에 관계없이 항상 렌더링되게 함.
+    // mask-mode는 명시하지 않으면 기본값(luminance 취급)이라 검정 선(currentColor) 아이콘이
+    // 명도 기준으로 거의 투명 처리되므로, 알파 채널 기준으로 마스킹하도록 alpha를 명시.
+    mask-mode: alpha;
+    -webkit-mask-mode: alpha;
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-position: center;
@@ -53,12 +59,14 @@
     // 아이콘은 "현재 테마 상태"가 아니라 "클릭 시 전환될 테마"를 나타냄
     // → 라이트 모드일 땐 달(다크로 전환 예고), 다크 모드일 땐 해(라이트로 전환 예고)
     &--sun {
-      mask-image: url('../assets/icons/ico--theme-sun.svg');
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'%3E%3C/circle%3E%3Cpath d='M12 2v2'%3E%3C/path%3E%3Cpath d='M12 20v2'%3E%3C/path%3E%3Cpath d='m4.93 4.93 1.41 1.41'%3E%3C/path%3E%3Cpath d='m17.66 17.66 1.41 1.41'%3E%3C/path%3E%3Cpath d='M2 12h2'%3E%3C/path%3E%3Cpath d='M20 12h2'%3E%3C/path%3E%3Cpath d='m6.34 17.66-1.41 1.41'%3E%3C/path%3E%3Cpath d='m19.07 4.93-1.41 1.41'%3E%3C/path%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='4'%3E%3C/circle%3E%3Cpath d='M12 2v2'%3E%3C/path%3E%3Cpath d='M12 20v2'%3E%3C/path%3E%3Cpath d='m4.93 4.93 1.41 1.41'%3E%3C/path%3E%3Cpath d='m17.66 17.66 1.41 1.41'%3E%3C/path%3E%3Cpath d='M2 12h2'%3E%3C/path%3E%3Cpath d='M20 12h2'%3E%3C/path%3E%3Cpath d='m6.34 17.66-1.41 1.41'%3E%3C/path%3E%3Cpath d='m19.07 4.93-1.41 1.41'%3E%3C/path%3E%3C/svg%3E");
       opacity: 0;
     }
 
     &--moon {
-      mask-image: url('../assets/icons/ico--theme-moon.svg');
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401'%3E%3C/path%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401'%3E%3C/path%3E%3C/svg%3E");
     }
   }
 }

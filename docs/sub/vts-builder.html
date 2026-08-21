@@ -33,6 +33,9 @@
       </nav>
 
       <div class="site-header__actions">
+        <button type="button" class="site-header__menu-toggle" popovertarget="js-mobile-nav" aria-expanded="false" aria-controls="js-mobile-nav" aria-label="메뉴 열기" data-action="menu:toggle">
+          <span class="site-header__menu-icon" aria-hidden="true"></span>
+        </button>
         <button type="button" class="site-header__action-btn" popovertarget="js-search-popover" aria-expanded="false" aria-controls="js-search-popover" aria-label="검색 열기" data-action="search:toggle">
           <span class="icon icon--search" aria-hidden="true"></span>
         </button>
@@ -51,6 +54,13 @@
           </button>
         </form>
       </div>
+
+      <nav class="site-header__mobile-nav" id="js-mobile-nav" popover="auto" aria-label="모바일 메뉴">
+        <ul class="site-header__mobile-nav-list">
+          <li><a class="site-header__mobile-nav-link" href="../index.html#about">소개</a></li>
+          <li><a class="site-header__mobile-nav-link" href="../index.html#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -225,6 +235,15 @@
     </div>
   </footer>
 
+  <div class="scroll-fab">
+    <button type="button" class="scroll-fab__btn" data-action="scroll:top" aria-label="페이지 맨 위로 이동">
+      <span class="icon icon--arrow-up" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="scroll-fab__btn" data-action="scroll:bottom" aria-label="페이지 맨 아래로 이동">
+      <span class="icon icon--arrow-down" aria-hidden="true"></span>
+    </button>
+  </div>
+
   <dialog class="lightbox" id="js-lightbox" aria-labelledby="js-lightbox-caption">
     <div class="lightbox__inner">
       <button type="button" class="lightbox__close" data-action="modal:close" aria-label="이미지 확대보기 닫기">
@@ -247,6 +266,8 @@
   <script src="../js/utils/utils.js"></script>
   <script src="../js/modules/theme-toggle.js"></script>
   <script src="../js/modules/search-popover.js"></script>
+  <script src="../js/modules/mobile-nav.js"></script>
+  <script src="../js/modules/scroll-fab.js"></script>
   <script src="../js/modules/slider.js"></script>
   <script src="../js/modules/lightbox.js"></script>
   <script src="../js/modules/card-search.js"></script>

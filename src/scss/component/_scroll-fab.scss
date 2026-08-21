@@ -1,0 +1,35 @@
+// src/scss/component/_scroll-fab.scss
+// 우측 하단 고정 플로팅 버튼 — 페이지 맨 위/맨 아래로 즉시 이동
+@use '../abstract/mixins' as *;
+
+.scroll-fab {
+  position: fixed;
+  right: var(--spacing-lg);
+  bottom: var(--spacing-lg);
+  z-index: var(--z-dropdown);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.scroll-fab__btn {
+  @include flex-center;
+  width: var(--control-size-md);
+  height: var(--control-size-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-md);
+  transition: {
+    property:        color, background-color, box-shadow;
+    duration:         var(--duration-fast);
+    timing-function:  var(--easing-standard);
+  }
+
+  &:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-surface-hover);
+    box-shadow: var(--shadow-lg);
+  }
+}

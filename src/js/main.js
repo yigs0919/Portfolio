@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const searchPopoverEl = document.getElementById('js-search-popover');
   initSearchPopover(searchTriggerEl, searchPopoverEl);
 
+  const menuTriggerEl = document.querySelector('.site-header__menu-toggle');
+  const mobileNavEl = document.getElementById('js-mobile-nav');
+  initMobileNav(menuTriggerEl, mobileNavEl);
+
+  const scrollTopBtnEl = document.querySelector('[data-action="scroll:top"]');
+  const scrollBottomBtnEl = document.querySelector('[data-action="scroll:bottom"]');
+  initScrollFab(scrollTopBtnEl, scrollBottomBtnEl);
+
   const searchInputEl = document.getElementById('js-search-input');
   initCardSearch(searchInputEl);
   initGallerySearch(searchInputEl);

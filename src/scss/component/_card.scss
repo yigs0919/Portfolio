@@ -22,6 +22,9 @@
   }
 
   &__item {
+    // grid item 자동 최소 크기가 내부 img(슬라이더 이미지)의 콘텐츠 기반 크기로 잡혀
+    // 1fr 트랙이 모바일에서 뷰포트보다 넓게 밀려나는 것을 방지 (grid-item overflow 버그)
+    min-width: 0;
     content-visibility: auto;
     // contain-intrinsic-size: auto 400px auto 450px;
   }

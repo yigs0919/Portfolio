@@ -6,6 +6,14 @@
   <title>웹 퍼블리셔 이가슬 - 포트폴리오</title>
   <meta name="description" content="웹 퍼블리셔 이가슬 포트폴리오입니다.">
   <meta name="robots" content="noindex">
+
+  <meta property="og:title" content="웹퍼블리셔 이가슬 - 포트폴리오">
+  <meta property="og:description" content="기획과 디자인의 맥락을 놓치지 않는 웹퍼블리셔입니다. 정교한 UI 구현은 물론, 자동화 워크플로우를 활용해 작업 공수를 줄이고 팀의 협업 생산성을 높이는 데 집중합니다.">
+  <meta property="og:image" content="https://yigs0919.github.io/Portfolio/assets/images/yigs_og-image.png">
+  <meta property="og:url" content="https://yigs0919.github.io/Portfolio/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preload" href="assets/fonts/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/images/yigs_profile.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="css/main.css">
@@ -32,6 +40,9 @@
       </nav>
 
       <div class="site-header__actions">
+        <button type="button" class="site-header__menu-toggle" popovertarget="js-mobile-nav" aria-expanded="false" aria-controls="js-mobile-nav" aria-label="메뉴 열기" data-action="menu:toggle">
+          <span class="site-header__menu-icon" aria-hidden="true"></span>
+        </button>
         <button type="button" class="site-header__action-btn" popovertarget="js-search-popover" aria-expanded="false" aria-controls="js-search-popover" aria-label="검색 열기" data-action="search:toggle">
           <span class="icon icon--search" aria-hidden="true"></span>
         </button>
@@ -50,6 +61,13 @@
           </button>
         </form>
       </div>
+
+      <nav class="site-header__mobile-nav" id="js-mobile-nav" popover="auto" aria-label="모바일 메뉴">
+        <ul class="site-header__mobile-nav-list">
+          <li><a class="site-header__mobile-nav-link" href="index.html#about">소개</a></li>
+          <li><a class="site-header__mobile-nav-link" href="index.html#developer-tools">프로젝트</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -73,7 +91,7 @@
           </ul>
 
           <div class="hero__actions">
-            <a class="btn btn--primary" href="mailto:yigaseul@naver.com">
+            <a class="btn btn--ghost" href="mailto:yigaseul@naver.com">
               <span class="icon icon--mail" aria-hidden="true"></span>
               이메일 보내기
             </a>
@@ -1222,9 +1240,20 @@
     </div>
   </footer>
 
+  <div class="scroll-fab">
+    <button type="button" class="scroll-fab__btn" data-action="scroll:top" aria-label="페이지 맨 위로 이동">
+      <span class="icon icon--arrow-up" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="scroll-fab__btn" data-action="scroll:bottom" aria-label="페이지 맨 아래로 이동">
+      <span class="icon icon--arrow-down" aria-hidden="true"></span>
+    </button>
+  </div>
+
   <script src="js/utils/utils.js"></script>
   <script src="js/modules/theme-toggle.js"></script>
   <script src="js/modules/search-popover.js"></script>
+  <script src="js/modules/mobile-nav.js"></script>
+  <script src="js/modules/scroll-fab.js"></script>
   <script src="js/modules/slider.js"></script>
   <script src="js/modules/lightbox.js"></script>
   <script src="js/modules/card-search.js"></script>
